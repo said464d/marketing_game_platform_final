@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="text-center py-5">
+    <h1 class="display-4">مرحباً بك في منصة المسابقات التسويقية التفاعلية</h1>
+    <p class="lead">المنصة الأولى لإنشاء وإدارة المسابقات التسويقية التفاعلية</p>
+    <hr class="my-4">
+    <p>اكتشف المسابقات النشطة أو أنشئ مسابقتك الخاصة</p>
+    <div class="d-flex justify-content-center gap-3">
+        <a href="{{ url_for('public.contests') }}" class="btn btn-primary btn-lg">استعرض المسابقات</a>
+        <a href="{{ url_for('auth.register') }}" class="btn btn-outline-primary btn-lg">سجل كشركة</a>
+    </div>
+</div>
+
+{% if contests %}
+<div class="mt-5">
+    <h2 class="text-center mb-4">المسابقات النشطة</h2>
+    <div class="row">
+        {% for contest in contests %}
+        <div class="col-md-4 mb-4">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h5 class="card-title">{{ contest.title }}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">{{ contest.company.name }}</h6>
+                    <p class="card-text">{{ contest.description|truncate(100) }}</p>
+                </div>
+                <div class="card-footer bg-transparent">
+                    <a href="{{ url_for('public.view_contest', contest_id=contest.id) }}" class="btn btn-sm btn-primary">عرض التفاصيل</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endif %}
+
+<div class="row mt-5">
+    <div class="col-md-4">
+        <div class="card text-center h-100">
+            <div class="card-body">
+                <h3 class="card-title">للشركات</h3>
+                <p class="card-text">أنشئ مسابقات تفاعلية لزيادة التفاعل مع علامتك التجارية وجذب عملاء جدد</p>
+                <a href="{{ url_for('auth.register') }}" class="btn btn-primary">ابدأ الآن</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card text-center h-100">
+            <div class="card-body">
+                <h3 class="card-title">للمشاركين</h3>
+                <p class="card-text">شارك في مسابقات متنوعة واربح جوائز قيمة من علاماتك التجارية المفضلة</p>
+                <a href="{{ url_for('public.contests') }}" class="btn btn-primary">استعرض المسابقات</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card text-center h-100">
+            <div class="card-body">
+                <h3 class="card-title">لماذا منصتنا؟</h3>
+                <p class="card-text">منصة سهلة الاستخدام، تقارير تحليلية متقدمة، وأدوات تسويقية فعالة</p>
+                <a href="#" class="btn btn-primary">تعرف على المزيد</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

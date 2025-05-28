@@ -1,0 +1,138 @@
+/* الألوان الرئيسية للمنصة */
+:root {
+    --primary-color: #4e73df;
+    --secondary-color: #1cc88a;
+    --accent-color: #f6c23e;
+    --dark-color: #5a5c69;
+    --light-color: #f8f9fc;
+}
+
+/* تخصيص العناصر الأساسية */
+body {
+    font-family: 'Tajawal', sans-serif;
+    background-color: var(--light-color);
+}
+
+/* تنسيق البطاقات */
+.card {
+    border-radius: 0.5rem;
+    box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* تنسيق الأزرار */
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+    background-color: #2e59d9;
+    border-color: #2e59d9;
+}
+
+.btn-success {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+}
+
+/* تنسيق شريط التنقل */
+.navbar {
+    box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15);
+}
+
+/* تنسيق العناوين */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+}
+
+/* تنسيق لوحة المتصدرين */
+.leaderboard-item {
+    padding: 1rem;
+    margin-bottom: 0.5rem;
+    border-radius: 0.5rem;
+    background-color: white;
+    box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.1);
+}
+
+.leaderboard-item.top-1 {
+    background-color: #ffd700;
+    color: #000;
+}
+
+.leaderboard-item.top-2 {
+    background-color: #c0c0c0;
+    color: #000;
+}
+
+.leaderboard-item.top-3 {
+    background-color: #cd7f32;
+    color: #000;
+}
+
+/* تنسيق نموذج المسابقة */
+.contest-form {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15);
+}
+
+/* تنسيق صفحة نتائج المسابقة */
+.result-card {
+    text-align: center;
+    padding: 2rem;
+}
+
+.score-display {
+    font-size: 4rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+/* تنسيق الرسوم البيانية */
+.chart-container {
+    position: relative;
+    height: 300px;
+    margin-bottom: 2rem;
+}
+
+/* تنسيق الشارات */
+.badge-contest {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 2rem;
+    font-weight: 600;
+}
+
+/* تنسيق الصفحة الرئيسية */
+.hero-section {
+    padding: 5rem 0;
+    background: linear-gradient(135deg, var(--primary-color) 0%, #224abe 100%);
+    color: white;
+    margin-bottom: 3rem;
+}
+
+/* تنسيق التذييل */
+footer {
+    margin-top: 3rem;
+    padding: 2rem 0;
+    background-color: var(--dark-color);
+    color: white;
+}
+
+/* تنسيق للأجهزة المحمولة */
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 3rem 0;
+    }
+    
+    .contest-form {
+        padding: 1rem;
+    }
+}
